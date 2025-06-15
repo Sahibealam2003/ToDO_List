@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { toDosValue } from '../../Utility/TodoContex'
+import {v4 as uuid} from 'uuid'
 
 const AddTodo = () => {
     const [title, setTitle] = useState('')
     const [description, setdescription] = useState('')
     const { storeTodos, setStoreTodos } = toDosValue()
+    
+    
 
     function onTitleChange(e) {
         setTitle(e.target.value)
@@ -19,7 +22,7 @@ const AddTodo = () => {
         if (!title || !description) {
             return
         }
-        setStoreTodos([...storeTodos, { title, description }])
+        setStoreTodos([...storeTodos, { title, description , id: uuid() }])
         setTitle('')
         setdescription('')
     }
