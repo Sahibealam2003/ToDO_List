@@ -3,8 +3,8 @@ import Todos from './Components/Todos'
 
 const App = () => {
   return (
-    <div>
-      <Todos/>
+    <div className="bg-gray-100 min-h-screen p-5">
+      <Todos />
     </div>
   )
 }
