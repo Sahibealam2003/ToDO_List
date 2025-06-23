@@ -1,68 +1,45 @@
-import React from 'react'
-import { toDosValue } from '../../Utility/TodoContex'
+import React from 'react';
+import { toDosValue } from '../../Utility/TodoContex';
 
 const Edit = () => {
   const {
     editDiscription, setEditDiscription,
     editTitle, setEditTitle,
     storeTodos, setStoreTodos,
-    setIsEditing, editId, setEditId
-  } = toDosValue()
+    setIsEditing, editId, setEditId,
+    setIsDetailEditing
+  } = toDosValue();
 
-  // Update Handler
   const handleUpdate = () => {
-    const updatedTodos = storeTodos.map((todo) =>
-      todo.id === editId ? { ...todo, title: editTitle, description: editDiscription } : todo
-    )
-    setStoreTodos(updatedTodos)
-    resetEdit()
-  }
-
-  // Cancel Handler
-  const handleCancel = () => {
-    resetEdit()
-  }
-
-  // Common Reset Function
-  const resetEdit = () => {
-    setEditTitle('')
-    setEditDiscription('')
-    setEditId(null)
-    setIsEditing(false)
-  }
+    const updated = storeTodos.map((item) =>
+      item.id === editId ? { ...item, title: editTitle, description: editDiscription } : item
+    );
+    setStoreTodos(updated);
+    setEditTitle('');
+    setEditDiscription('');
+    setEditId(null);
+    setIsEditing(false);
+    setIsDetailEditing(false); // reset after detail editing
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-3 p-4">
+    <div className='p-4'>
+      <h2>Edit Todo</h2>
       <input
-        type="text"
         value={editTitle}
         onChange={(e) => setEditTitle(e.target.value)}
-        placeholder="Edit Title"
-        className="border px-2 py-1 rounded w-[90%]"
+        placeholder='Title'
+        className='border p-1 mb-2 w-full'
       />
       <input
-        type="text"
         value={editDiscription}
         onChange={(e) => setEditDiscription(e.target.value)}
-        placeholder="Edit Description"
-        className="border px-2 py-1 rounded w-[90%]"
+        placeholder='Description'
+        className='border p-1 mb-2 w-full'
       />
-      <div className="flex gap-4 mt-2">
-        <button
-          onClick={handleUpdate}
-          className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
-        >
-          Update
-        </button>
-        <button
-          onClick={handleCancel}
-          className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
-        >
-          Cancel
-        </button>
-      </div>
+      <button onClick={handleUpdate} className='bg-green-500 text-white px-4 py-2 rounded'>Update</button>
     </div>
-  )
-}
+  );
+};
 
-export default Edit
+export default Edit;
