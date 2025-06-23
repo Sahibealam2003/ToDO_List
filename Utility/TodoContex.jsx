@@ -7,14 +7,14 @@ export const ToDosData = ({ children }) => {
   const [isDetailEditing, setIsDetailEditing] = useState(false);
   const [storeTodos, setStoreTodos] = useState([]);
   const [editTitle, setEditTitle] = useState('');
-  const [editDiscription, setEditDiscription] = useState('');
+  const [editDescription, setEditDescription] = useState('');
 
   return (
     <toDosData.Provider value={{
       isEditing, setIsEditing,
       storeTodos, setStoreTodos,
       editTitle, setEditTitle,
-      editDiscription, setEditDiscription,
+      editDescription, setEditDescription,
       editId, setEditId,
       isDetailEditing, setIsDetailEditing
     }}>

@@ -11,7 +11,7 @@ const TodoDetail = () => {
     setIsDetailEditing,
     isDetailEditing,
     setEditTitle,
-    setEditDiscription,
+    setEditDescription,
     setEditId
   } = toDosValue();
 
@@ -20,7 +20,7 @@ const TodoDetail = () => {
   const handleEditClick = () => {
     if (todo) {
       setEditTitle(todo.title);
-      setEditDiscription(todo.description);
+      setEditDescription(todo.description);
       setEditId(todo.id);
       setIsDetailEditing(true);
     }
@@ -33,19 +33,19 @@ const TodoDetail = () => {
 
   return (
     <>
-      <div className='p-4'>
+      <div className='bg-black'>
         {todo && (
           <div>
-            <h2 className='text-xl font-bold'>{todo.title}</h2>
-            <p className='text-gray-600 mt-2'>{todo.description}</p>
+            <h2>{todo.title}</h2>
+            <p >{todo.description}</p>
           </div>
         )}
       </div>
-      <div className='p-4 flex gap-4'>
-        <button onClick={handleEditClick} className="bg-blue-500 px-3 py-1 rounded text-white hover:bg-blue-600">
+      <div>
+        <button onClick={handleEditClick} >
           Edit
         </button>
-        <button onClick={handleBack} className="bg-gray-500 px-3 py-1 rounded text-white hover:bg-gray-600">
+        <button onClick={handleBack} >
           Back
         </button>
       </div>

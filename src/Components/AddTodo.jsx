@@ -8,7 +8,10 @@ const AddTodo = () => {
   const { storeTodos, setStoreTodos } = toDosValue()
 
   function onSubmitHandler() {
-    if (!title || !description) return
+   if (title.trim() === '' || description.trim() === '') {
+      alert('Title or Description cannot both be empty!');
+      return;
+    }
     setStoreTodos([...storeTodos, { title, description, id: uuid() }])
     setTitle('')
     setdescription('')

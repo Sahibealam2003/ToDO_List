@@ -3,7 +3,7 @@ import { toDosValue } from '../../Utility/TodoContex';
 
 const Edit = () => {
   const {
-    editDiscription, setEditDiscription,
+    editDescription, setEditDescription,
     editTitle, setEditTitle,
     storeTodos, setStoreTodos,
     setIsEditing, editId, setEditId,
@@ -11,33 +11,67 @@ const Edit = () => {
   } = toDosValue();
 
   const handleUpdate = () => {
+ 
+    if (editTitle.trim() === '' || editDescription.trim() === '') {
+      alert('Title or Description cannot both be empty!');
+      return;
+    }
+
     const updated = storeTodos.map((item) =>
-      item.id === editId ? { ...item, title: editTitle, description: editDiscription } : item
+      item.id === editId ? { ...item, title: editTitle, description: editDescription } : item
     );
+
     setStoreTodos(updated);
     setEditTitle('');
-    setEditDiscription('');
+    setEditDescription('');
     setEditId(null);
     setIsEditing(false);
-    setIsDetailEditing(false); // reset after detail editing
+    setIsDetailEditing(false);
+  };
+
+  const handleCancel = () => {
+    setEditTitle('');
+    setEditDescription('');
+    setEditId(null);
+    setIsEditing(false);
+    setIsDetailEditing(false);
   };
 
   return (
-    <div className='p-4'>
-      <h2>Edit Todo</h2>
-      <input
-        value={editTitle}
-        onChange={(e) => setEditTitle(e.target.value)}
-        placeholder='Title'
-        className='border p-1 mb-2 w-full'
-      />
-      <input
-        value={editDiscription}
-        onChange={(e) => setEditDiscription(e.target.value)}
-        placeholder='Description'
-        className='border p-1 mb-2 w-full'
-      />
-      <button onClick={handleUpdate} className='bg-green-500 text-white px-4 py-2 rounded'>Update</button>
+    <div className='border bg-black w-[100%] p-4 text-amber-50'>
+
+      <div className='flex flex-col justify-center items-center mt-15.5 h-[100%]'>
+        <h2 className='text-[25px] font-bold'>Edit Todo</h2>
+      </div>
+
+      <div className='flex flex-col justify-center gap-4 items-center h-[60vh]'>
+        <input
+          value={editTitle}
+          onChange={(e) => setEditTitle(e.target.value)}
+          placeholder='Edit Title'
+          className='border-b focus:text-[20px] focus:border-b-3 focus:outline-none py-[-2px] focus:y-3 focus:h-[50px] focus:rounded w-[90%] h-[30px]'
+        />
+        <input
+          value={editDescription}
+          onChange={(e) => setEditdescription(e.target.value)}
+          placeholder='Edit Description'
+          className='border-b focus:text-[16px] focus:border-b-3 focus:outline-none py-[-2px] focus:y-3 focus:h-[50px] focus:rounded w-[90%] h-[30px]'
+        />
+
+        <div className='w-[90%] flex gap-6'>
+          <button 
+            onClick={handleUpdate} 
+            className='cursor-pointer w-[80%] py-1.5 mt-4 bg-[#1da1f2] drop-shadow-[0px_0px_5px_rgba(0,0,0,1.6)] active:bg-[#00CCFF] active:py-2 active:w-[82%] active:text-[20px]'>
+            Update
+          </button>
+
+          <button 
+            onClick={handleCancel} 
+            className='cursor-pointer w-[80%] py-1.5 mt-4 bg-[#1da1f2] drop-shadow-[0px_0px_5px_rgba(0,0,0,1.6)] active:bg-[#00CCFF] active:py-2 active:w-[82%] active:text-[20px]'>
+            Cancel
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

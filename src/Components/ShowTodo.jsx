@@ -8,7 +8,7 @@ const ShowTodo = ({ searchTodos }) => {
     setIsEditing,
     storeTodos,
     setStoreTodos,
-    setEditDiscription,
+    setEditDescription,
     setEditTitle,
     setEditId
   } = toDosValue()
@@ -18,22 +18,23 @@ const ShowTodo = ({ searchTodos }) => {
   )
 
   return (
-    <div className='h-[60vh] w-[100%] flex flex-col items-center overflow-y-auto'>
+    <div className='bg-gray-100 h-[70vh] w-[100%] flex flex-col items-center overflow-y-auto shadow-[inset_0px_-5px_10px_rgba(000,000,000,0.5)]
+'>
       <div className="w-[96%] mt-4 ">
         {filteredTodos.map((item) => (
           <div 
             key={item.id}
-            className="border border-gray-400 shadow-[0px_5px_5px_rgba(000,000,000,0.5)] mb-2 p-1 flex justify-between items-start"
+            className="bg-white border border-gray-300 drop-shadow-[0px_-5px_5px_rgba(000,000,000,0.3)] mb-2 flex justify-between items-start"
           >
 
-            <div className='hover:text-amber-400 flex flex-col gap-2 ml-2' onClick={()=>navigate(`/details/${item.id}`)}>
+            <div className='w-[100%] flex flex-col gap-2 px-2 cursor-pointer active:p-2' onClick={()=>navigate(`/details/${item.id}`)}>
               <div >
                 <span className='cursor-pointer text-[17px] text-gray-500 '>Title : </span>
-                <span className='cursor-pointer font-bold text-[21px]'>{item.title}</span>
+                <span className='cursor-pointer font-extrabold text-[21px]'>{item.title}</span>
               </div>
               <div className="text-gray-700">
-                <span className='cursor-pointer text-[17px] text-gray-500'>Description : </span>
-                <span className='cursor-pointer text-[18px]'>{item.description}</span>
+                <span className='cursor-pointer text-[15px] text-gray-500'>Description : </span>
+                <span className='cursor-pointer font-bold text-[15px]'>{item.description}</span>
               </div>
             </div>
 
@@ -62,7 +63,7 @@ const ShowTodo = ({ searchTodos }) => {
               <button
                 onClick={() => {
                   setEditTitle(item.title)
-                  setEditDiscription(item.description)
+                  setEditDescription(item.description)
                   setIsEditing(true)
                   setEditId(item.id)
                 }}
