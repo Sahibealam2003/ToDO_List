@@ -53,7 +53,7 @@ const Edit = () => {
         />
         <input
           value={editDescription}
-          onChange={(e) => setEditdescription(e.target.value)}
+          onChange={(e) => setEditDescription(e.target.value)}
           placeholder='Edit Description'
           className='border-b focus:text-[16px] focus:border-b-3 focus:outline-none py-[-2px] focus:y-3 focus:h-[50px] focus:rounded w-[90%] h-[30px]'
         />
