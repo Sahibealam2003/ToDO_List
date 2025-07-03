@@ -37,7 +37,6 @@ const TodoDetail = () => {
 
     <h1 className='flex justify-center mt-10 font-bold text-4xl'><span className='text-[#1da1f2] px-2'>{todo.title.toUpperCase()}</span> TODO </h1>
     <div className='relative border border-gray-400 w-[80%]  mt-5 mx-auto  rounded'>
-      <div className="absolute inset-0 shadow-[inset_1px_-1px_100px_rgba(0,0,0,0.1)]" />
 
 
       {isDetailEditing && <Edit detail={true} />}
