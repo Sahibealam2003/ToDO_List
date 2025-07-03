@@ -99,13 +99,13 @@ const Edit = ({detail}) => {
         <div className="flex gap-5 w-[100%] items-center justify-center">
           <button
             onClick={handleUpdate}
-            className="transition-transform duration-200 hover:scale-104 cursor-pointer w-[30%] py-1.5 mt-4 bg-[#1da1f2] text-white drop-shadow-[0px_0px_5px_rgba(0,0,0,.6)] active:bg-[#00CCFF] active:scale-108 "
+            className="transition-transform duration-200 hover:scale-104 cursor-pointer w-[30%] py-1.5 mt-4 bg-[#2c2c2c] text-white drop-shadow-[0px_5px_5px_rgba(0,0,0,.6)] active:bg-[#585858] active:scale-108 "
           >
             Update
           </button>
           <button
             onClick={handleCancel}
-            className="transition-transform duration-200 hover:scale-104 cursor-pointer w-[30%] py-1.5 mt-4 bg-[#555] text-white drop-shadow-[0px_0px_5px_rgba(0,0,0,.6)] active:bg-[#888] active:scale-108 "
+            className="transition-transform duration-200 hover:scale-104 cursor-pointer w-[30%] py-1.5 mt-4 bg-[#585858] text-white drop-shadow-[0px_5px_5px_rgba(0,0,0,.6)] active:bg-[#bdbdbd] active:scale-108 "
           >
             Cancel
           </button>

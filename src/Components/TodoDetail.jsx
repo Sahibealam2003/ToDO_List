@@ -35,7 +35,7 @@ const TodoDetail = () => {
     <>
 
 
-    <h1 className='flex justify-center mt-10 font-bold text-4xl'><span className='text-[#1da1f2] px-2'>{todo.title.toUpperCase()}</span> TODO </h1>
+    <h1 className='flex justify-center mt-10 font-bold text-4xl'><span className='text-[#bdbdbd] px-2'>{todo.title.toUpperCase()}</span> TODO </h1>
     <div className='relative border border-gray-400 w-[80%]  mt-5 mx-auto  rounded'>
 
 
@@ -52,13 +52,13 @@ const TodoDetail = () => {
   <div className='p-4 flex justify-center gap-4'>
     <button
       onClick={handleEditClick}
-      className="transition-transform duration-200 hover:scale-104 cursor-pointer w-[30%] py-1.5 mt-4 bg-[#1da1f2] text-white drop-shadow-[0px_0px_3px_rgba(0,0,0,.6)] active:bg-[#00CCFF] active:scale-108 "
+      className="transition-transform duration-200 hover:scale-104 cursor-pointer w-[30%] py-1.5 mt-4 bg-[#2c2c2c] text-white drop-shadow-[0px_3px_3px_rgba(0,0,0,.6)] active:bg-[#585858]  "
     >
       Edit
     </button>
     <button
       onClick={handleBack}
-      className="transition-transform duration-200 hover:scale-104 cursor-pointer w-[30%] py-1.5 mt-4 bg-[#555] text-white drop-shadow-[0px_0px_3px_rgba(0,0,0,.6)] active:bg-[#888] active:scale-108 "
+      className="transition-transform duration-200 hover:scale-104 cursor-pointer w-[30%] py-1.5 mt-4 bg-[#585858] text-white drop-shadow-[0px_3px_3px_rgba(0,0,0,.6)] active:bg-[#bdbdbd] "
     >
       Back
     </button>

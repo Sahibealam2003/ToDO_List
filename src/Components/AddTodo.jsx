@@ -33,7 +33,7 @@ const AddTodo = () => {
   }
 
   return (
-    <div className='border w-[100%] h-[100%] p-4 text-amber-50'>
+    <div className=' w-[100%] h-[100%] p-4 text-amber-50'>
       <div>
         <svg
           className="w-[30px] h-[30px]"
@@ -85,7 +85,7 @@ const AddTodo = () => {
 
         <button
           onClick={onSubmitHandler}
-          className='transition-transform duration-200 hover:scale-104 cursor-pointer w-[80%] py-1.5 mt-4 bg-[#1da1f2] drop-shadow-[0px_0px_5px_rgba(0,0,0,1.6)] active:bg-[#00CCFF] active:scale-108'
+          className='transition-transform duration-200 hover:scale-104 cursor-pointer w-[80%] py-1.5 mt-4 bg-[#2c2c2c] drop-shadow-[0px_5px_5px_rgba(0,0,0,0.5)] active:bg-[#585858]'
         >
           Submit
         </button>

@@ -3,7 +3,7 @@ import React from 'react'
 const TodoSearch = ({ setSearchTodos }) => {
   return (
     <div
-      className='h-[70px] w-full bg-[#2E2787] flex items-center justify-center
+      className='h-[70px] w-full bg-gradient-to-br from-[#2c2c2c] via-[#585858] flex items-center justify-center
                  shadow-[0_5px_5px_rgba(0,0,0,1.4)]' // 👈 Bottom shadow only
     >
       <input

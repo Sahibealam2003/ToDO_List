@@ -10,21 +10,25 @@ const Todos = () => {
   const { isEditing } = toDosValue()
   return (
     <>
-      <div className='border flex justify-center items-center gap-10 w-[100%] min-h-[100vh] bg-[#ADD8E6] '>
+      <div className='border flex justify-center items-center gap-10 w-[100%] min-h-[100vh]  bg-gradient-to-br from-[#2c2c2c] via-[#585858] to-[#bdbdbd] '>
 
 
-        <div className="border w-[35%] h-[80vh] bg-[#2E2787]">
+        <div className="drop-shadow-[10px_14px_16px_rgba(0,0,0,0.5)] w-[35%] h-[80vh] bg-[#585858] shadow">
           {isEditing ? <Edit /> : <AddTodo />}
         </div>
 
-        <div className='relative w-[35%] min-h-[80vh] bg-amber-50'>
+        <div className=' w-[35%] min-h-[80vh] bg-[#bdbdbd]'>
 
           <TodoSearch setSearchTodos={setSearchTodos} />
           <ShowTodo searchTodos={searchTodos} />
           
         </div>
-      </div>
 
+      </div>
+        <div className='relative'>
+        <h1 className='absolute -top-8 left-[42%] font-medium text-[#2c2c2c]'>Made by Sahib e Alam</h1>
+
+        </div>
     </>
   )
 }
