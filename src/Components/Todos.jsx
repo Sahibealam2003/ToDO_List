@@ -26,7 +26,7 @@ const Todos = () => {
 
       </div>
         <div className='relative'>
-        <h1 className='absolute -top-8 left-[42%] font-medium text-[#2c2c2c]'>Made by Sahib e Alam</h1>
+        <h1 className='absolute -top-8 left-[42%] font-medium text-[#585858]'>Made by Sahib e Alam</h1>
 
         </div>
     </>
