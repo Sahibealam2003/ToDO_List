@@ -11,12 +11,6 @@ const AddTodo = () => {
   const { storeTodos, setStoreTodos } = toDosValue()
 
   function onSubmitHandler() {
-<<<<<<< HEAD
-   if (title.trim() === '' || description.trim() === '') {
-      alert('Title or Description cannot both be empty!');
-      return;
-    }
-=======
     let valid = true;
 
     if (!title.trim()) {
@@ -31,7 +25,6 @@ const AddTodo = () => {
 
     if (!valid) return;
 
->>>>>>> aa4244b (commit)
     setStoreTodos([...storeTodos, { title, description, id: uuid() }])
     setTitle('')
     setdescription('')

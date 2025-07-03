@@ -11,7 +11,7 @@ const TodoDetail = () => {
     setIsDetailEditing,
     isDetailEditing,
     setEditTitle,
-    setEditDescription,
+    setEditDiscription,
     setEditId
   } = toDosValue();
 
@@ -20,7 +20,7 @@ const TodoDetail = () => {
   const handleEditClick = () => {
     if (todo) {
       setEditTitle(todo.title);
-      setEditDescription(todo.description);
+      setEditDiscription(todo.description);
       setEditId(todo.id);
       setIsDetailEditing(true);
     }
@@ -33,26 +33,6 @@ const TodoDetail = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <div className='bg-black'>
-        {todo && (
-          <div>
-            <h2>{todo.title}</h2>
-            <p >{todo.description}</p>
-          </div>
-        )}
-      </div>
-      <div>
-        <button onClick={handleEditClick} >
-          Edit
-        </button>
-        <button onClick={handleBack} >
-          Back
-        </button>
-      </div>
-      {isDetailEditing && <Edit />}
-    </>
-=======
 
 
     <h1 className='flex justify-center mt-10 font-bold text-4xl'><span className='text-[#1da1f2] px-2'>{todo.title.toUpperCase()}</span> TODO </h1>
@@ -92,7 +72,6 @@ const TodoDetail = () => {
     
     </div>
         </>
->>>>>>> aa4244b (commit)
   );
 };
 
