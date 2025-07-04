@@ -18,22 +18,22 @@ const ShowTodo = ({ searchTodos }) => {
   )
 
   return (
-    <div className=' h-[68vh] w-[100%] flex flex-col items-center overflow-y-auto'>
+    <div className=' h-[68vh] w-[100%]  flex flex-col items-center overflow-y-auto'>
       <div className=" w-[96%] mt-4 ">
         {filteredTodos.map((item) => (
           <div 
             key={item.id}
-            className="border bg-amber-50 border-gray-400 transition-transform hover:scale-102 duration-200   shadow-[0px_5px_5px_rgba(000,000,000,0.5)] mb-2 p-1 flex justify-between items-start"
+            className="bg-[#2c2c2c] transition-transform hover:scale-102 duration-200   shadow-[0px_5px_5px_rgba(000,000,000,0.5)] mb-2 p-1 flex justify-between items-start"
           >
 
             <div className='cursor-pointer w-[100%] flex flex-col gap-2 ml-2' onClick={()=>navigate(`/details/${item.id}`)}>
               <div >
                 <span className='text-[17px] text-gray-500 '>Title : </span>
-                <span className='font-bold text-[21px]'>{item.title}</span>
+                <span className='font-bold text-amber-50 text-[21px]'>{item.title}</span>
               </div>
               <div className="text-gray-700">
                 <span className='text-[17px] text-gray-500'>Description : </span>
-                <span className='text-[18px]'>{item.description}</span>
+                <span className='text-[18px] text-amber-50'>{item.description}</span>
               </div>
             </div>
 

@@ -17,7 +17,7 @@ const Todos = () => {
           {isEditing ? <Edit /> : <AddTodo />}
         </div>
 
-        <div className=' w-[35%] min-h-[80vh] bg-[#bdbdbd]'>
+        <div className=' w-[35%]  min-h-[80vh] bg-[#585858]'>
 
           <TodoSearch setSearchTodos={setSearchTodos} />
           <ShowTodo searchTodos={searchTodos} />
