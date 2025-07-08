@@ -9,6 +9,7 @@ export const ToDosData = ({ children }) => {
   const [storeTodos, setStoreTodos] = useState(() => {
     // Jab app start hoti hai, ye line check karti hai ki localStorage mein pehle se koi todos saved hain ya nahi.
     // Agar hain, toh unko le lo. Agar nahi hain, toh ek empty todo list se kaam shuru karo.
+    // "todos" :- ye ham kuch bhi de sakte he ye ek name hai
     const saved = localStorage.getItem("todos");
     return saved ? JSON.parse(saved) : [];
   });
