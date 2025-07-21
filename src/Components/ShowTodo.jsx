@@ -18,7 +18,8 @@ const ShowTodo = ({ searchTodos }) => {
   );
 
   return (
-    <div className=' h-[68vh] w-[100%]  flex flex-col items-center overflow-y-auto'>
+    <div>
+      {filteredTodos.length > 0 ? <div className=' h-[68vh] w-[100%]  flex flex-col items-center overflow-y-auto'>
       <div className=" w-[96%] mt-4 ">
         {filteredTodos.map((item) => (
           <div 
@@ -84,6 +85,8 @@ const ShowTodo = ({ searchTodos }) => {
           </div>
         ))}
       </div>
+    </div> : <div className="text-center font-bold text-2xl text-gray-400 mt-40">No Todos Found...</div>
+}
     </div>
   )
 }
